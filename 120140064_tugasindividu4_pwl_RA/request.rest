@@ -1,0 +1,100 @@
+// CREATE USER
+
+POST http://localhost:5000/users
+Content-Type:  application/json
+
+{
+    "name": "raja",
+    "email": "raja@gmail.com",
+    "password": "123456",
+    "confPassword": "123456",
+    "role": "admin"
+}
+
+###
+// GET USER
+GET http://localhost:5000/users
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYiLCJpYXQiOjE2OTc5NzkxODgsImV4cCI6MTcyOTUxNTE4OH0.PoniV3rVkqA4w5lE5EpgIxcYIUJHqJLoGlhp-r7GCjM
+
+###
+//GET USER BY ID
+GET http://localhost:5000/users/4a4b82e7-9559-4b12-ab72-39cb762521b3
+
+###
+//UPDATE DATA USER BY ID
+PATCH http://localhost:5000/users/4a4b82e7-9559-4b12-ab72-39cb762521b3
+Content-Type: application/json
+
+{
+    "name": "shahraja",
+    "email": "shahraja@gmail.com",
+    "password": "123456",
+    "confPassword": "123456",
+    "role":"user"
+}
+
+###
+//DELETE USER BY ID
+DELETE http://localhost:5000/users/4a4b82e7-9559-4b12-ab72-39cb762521b3
+
+
+###
+//LOGIN USER ADMIN
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email":"raja@gmail.com",
+    "password":"123456"
+}
+
+###
+//LOGIN USER BIASA
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email":"rajaa@gmail.com",
+    "password":"123456"
+}
+
+###
+//CEK LOGIN USER
+GET http://localhost:5000/me
+
+###
+//LOGOUT
+DELETE http://localhost:5000/logout
+
+###
+//CREATE PRODUCT
+POST http://localhost:5000/products
+Content-Type: application/json
+
+{
+    "name":"Buku Cerpen",
+    "price":"20000"
+}
+
+###
+//GET ALL PRODUCT
+GET http://localhost:5000/products
+
+###
+//GET SINGLE PRODUCT BY ID
+GET http://localhost:5000/products/afc69974-df90-4f72-aaef-2a5de2a0a02f
+###
+
+###
+//UPDATE PRODUCT
+PATCH http://localhost:5000/products/afc69974-df90-4f72-aaef-2a5de2a0a02f
+Content-Type: application/json
+
+{
+    "name":"Buku Novel",
+    "price":"15000"
+}
+
+###
+//DELETE PRODUCT
+DELETE  http://localhost:5000/products/afc69974-df90-4f72-aaef-2a5de2a0a02f
